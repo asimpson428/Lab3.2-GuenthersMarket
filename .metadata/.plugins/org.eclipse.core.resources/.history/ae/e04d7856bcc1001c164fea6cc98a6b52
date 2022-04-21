@@ -1,0 +1,36 @@
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class Market {
+	
+	private static Scanner scnr;
+	private static Map<String, Double> items = new TreeMap<>();
+
+	public static void main(String[] args) {
+		
+		scnr = new Scanner(System.in);
+		fillItemsMap();
+		printMenu();
+		
+		
+		scnr.close();
+		
+		
+	}
+	
+	private static void fillItemsMap() {
+		items.put("apple", .99);
+		items.put("oranges", .89);
+		items.put("tissue", 3.99);
+	}
+	
+	private static void printMenu() {
+		System.out.println("Item\tPrice");
+		
+		for (Map.Entry<String, Double> entry : items.entrySet()) {
+			System.out.println(entry.getKey() + "\t" +entry.getValue());
+		}
+	}
+
+}
